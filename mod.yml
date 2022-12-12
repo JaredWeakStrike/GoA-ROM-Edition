@@ -4003,6 +4003,11 @@ assets:
     method: areadatascript
     source:
     - name: ard/hb26/evt.script
+  - name: goa
+    type: bdx
+    method: bdscript
+    source:
+    - name: ard/hb26/goa.bdscript
 - name: ard/hb32.ard #The Old Mansion (AS Warp)
   multi:
   - name: ard/jp/hb32.ard
