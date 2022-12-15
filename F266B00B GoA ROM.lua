@@ -770,7 +770,7 @@ if Place == 0x1A04 then
 	elseif PostSave == 5 then --The Altar of Naught
 		WarpRoom = 0x12
 	end
-	Spawn('Short',0x0A,0x08C,WarpRoom)
+	Spawn('Short',0x0A,0x094,WarpRoom)
 end
 --World Progress
 if Place == 0x0412 and Events(Null,Null,0x02) then --The Path to the Castle
@@ -843,7 +843,7 @@ if Place == 0x1A04 then
 	elseif PostSave == 3 then --Throne Room
 		WarpRoom = 0x0B
 	end
-	Spawn('Short',0x0A,0x0AC,WarpRoom)
+	Spawn('Short',0x0A,0x0B4,WarpRoom)
 end
 --World Progress
 if Place == 0x0308 and Events(0x47,0x47,0x47) then --Mountain Climb
@@ -920,7 +920,7 @@ if Place == 0x1A04 then
 	elseif ReadByte(Save+0x1D3E) == 4 then --Beast's Room
 		WarpRoom = 0x03
 	end
-	Spawn('Short',0x0A,0x0CC,WarpRoom)
+	Spawn('Short',0x0A,0x0D4,WarpRoom)
 end
 --World Progress
 if Place == 0x0105 and Events(Null,Null,0x01) then --The Parlor Ambush
@@ -1007,7 +1007,7 @@ if Place == 0x1A04 then
 	elseif PostSave == 3 then --Santa's House
 		WarpRoom = 0x08
 	end
-	Spawn('Short',0x0A,0x0EC,WarpRoom)
+	Spawn('Short',0x0A,0x0F4,WarpRoom)
 end
 --World Progress
 if Place == 0x010E and Events(Null,Null,0x01) then --The Professor's Experiment
@@ -1096,7 +1096,7 @@ if Place == 0x1A04 then
 	elseif PostSave == 5 then --Ruined Chamber
 		WarpRoom = 0x0B
 	end
-	Spawn('Short',0x0A,0x10C,WarpRoom)
+	Spawn('Short',0x0A,0x114,WarpRoom)
 end
 --World Progress
 if Place == 0x0007 and Events(Null,Null,0x01) then --Turning Over a New Feather
@@ -1189,7 +1189,7 @@ if Place == 0x1A04 then
 	elseif PostSave == 4 then --Coliseum Gates
 		WarpRoom = 0x02
 	end
-	Spawn('Short',0x0A,0x12C,WarpRoom)
+	Spawn('Short',0x0A,0x134,WarpRoom)
 end
 --World Progress
 if Place == 0x0306 and Events(Null,Null,0x02) then --Megara
@@ -1324,7 +1324,7 @@ if Place == 0x1A04 then
 	elseif PostSave == 3 then --Stone Hollow
 		WarpRoom = 0x01
 	end
-	Spawn('Short',0x0A,0x14C,WarpRoom)
+	Spawn('Short',0x0A,0x154,WarpRoom)
 end
 --World Progress
 if Place == 0x060A and Events(Null,Null,0x01) then --The Wild Kingdom
@@ -1419,10 +1419,10 @@ if Place == 0x1A04 then
 		WarpRoom = 0x1B
 	end
 	if WarpRoom <= 50 then
-		Spawn('Short',0x0A,0x16C,WarpRoom)
+		Spawn('Short',0x0A,0x174,WarpRoom)
 	else
-		Spawn('Short',0x0A,0x168,0x02)
-		Spawn('Short',0x0A,0x170,WarpRoom)
+		Spawn('Short',0x0A,0x170,0x02)
+		Spawn('Short',0x0A,0x178,WarpRoom)
 	end
 end
 --World Progress
@@ -1638,7 +1638,7 @@ if Place == 0x1A04 then
 		WarpRoom = 0x03
 		Visit = 5
 	end
-	Spawn('Short',0x0A,0x18C,WarpRoom)
+	Spawn('Short',0x0A,0x194,WarpRoom)
 	WriteByte(Save+0x3FFD,Visit)
 end
 --World Progress
@@ -1821,7 +1821,7 @@ if Place == 0x1A04 then
 	elseif PostSave == 4 then --Ship Graveyard: The Interceptor's Hold
 		WarpRoom = 0x0B
 	end
-	Spawn('Short',0x0A,0x1AC,WarpRoom)
+	Spawn('Short',0x0A,0x1B4,WarpRoom)
 end
 --World Progress
 if Place == 0x1710 and Events(0x4F,0x4F,0x4F) then --The Cursed Medallion
@@ -1891,10 +1891,10 @@ if Place == 0x1A04 then
 		WarpRoom = 0x05
 	end
 	if WarpRoom <= 50 then
-		Spawn('Short',0x0A,0x1CC,WarpRoom)
+		Spawn('Short',0x0A,0x1D4,WarpRoom)
 	else
-		Spawn('Short',0x0A,0x1C8,0x02)
-		Spawn('Short',0x0A,0x1D0,WarpRoom)
+		Spawn('Short',0x0A,0x1D0,0x02)
+		Spawn('Short',0x0A,0x1D8,WarpRoom)
 	end
 end
 --World Progress
@@ -1961,7 +1961,7 @@ if Place == 0x1A04 then
 	elseif PostSave == 3 then --Central Computer Mesa
 		WarpRoom = 0x08
 	end
-	Spawn('Short',0x0A,0x1EC,WarpRoom)
+	Spawn('Short',0x0A,0x1F4,WarpRoom)
 end
 --World Progress
 if Place == 0x0011 and Events(Null,Null,0x01) then --Tron
@@ -2060,10 +2060,10 @@ if Place == 0x1A04 then
 		WarpRoom = 0x15
 	end
 	if WarpRoom <= 50 then
-		Spawn('Short',0x0A,0x20C,WarpRoom)
+		Spawn('Short',0x0A,0x214,WarpRoom)
 	else
-		Spawn('Short',0x0A,0x208,0x02)
-		Spawn('Short',0x0A,0x210,WarpRoom)
+		Spawn('Short',0x0A,0x210,0x02)
+		Spawn('Short',0x0A,0x218,WarpRoom)
 	end
 end
 --World Progress

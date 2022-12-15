@@ -15,8 +15,8 @@ AreaSettings 1 100
 Spawn "e_50"
 	
 Program 0x02
-MapScript 13
 Party DEFAULT
+MapScript 13
 Unk1d 4
 AreaSettings 161 -1
 	SetUnk05 0x1
