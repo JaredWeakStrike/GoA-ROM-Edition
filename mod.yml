@@ -6364,3 +6364,18 @@ assets:
   source:
   - name: remastered/msn/us/TT07_WORM_02.bar/US_TT07_WORM_02_bar4.png
     type: internal
+# cor orb in pooh
+- name: ard/po00.ard #The Hundred Acre Wood (GoA Warp)
+  multi:
+  - name: ard/us/po00.ard
+  - name: ard/fr/po00.ard
+  - name: ard/gr/po00.ard
+  - name: ard/it/po00.ard
+  - name: ard/sp/po00.ard
+  method: binarc
+  source:
+  - name: m_20 #Combine Computer Spawns (Party)
+    type: areadataspawn
+    method: spawnpoint
+    source:
+    - name: m_20.yml
