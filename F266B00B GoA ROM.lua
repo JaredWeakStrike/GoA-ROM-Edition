@@ -2,12 +2,12 @@
 --Last Update: BAR() function implementation
 --Todo: Maybe item-based progress flags
 
-LUAGUI_NAME = 'GoA ROM Randomizer Build'
+LUAGUI_NAME = 'GoA ROM Randomizer Build (Objective Rando Support)'
 LUAGUI_AUTH = 'SonicShadowSilver2 (Ported by Num)'
 LUAGUI_DESC = 'A GoA build for use with the Randomizer. Requires ROM patching.'
 
 function _OnInit()
-print('GoA v1.53.5')
+print('GoA v1.53.5 | 1HR')
 GoAOffset = 0x7C
 if (GAME_ID == 0xF266B00B or GAME_ID == 0xFAF99301) and ENGINE_TYPE == "ENGINE" then --PCSX2
 	if ENGINE_VERSION < 3.0 then
@@ -103,6 +103,16 @@ Gauge2 = Gauge1 + NxtGauge
 Gauge3 = Gauge2 + NxtGauge--]]
 Menu2  = Menu1 + NextMenu
 --Menu3  = Menu2 + NextMenu
+end
+
+function CheckObjectiveCount()
+--Check Objective Rando 0x4f4
+	count = ReadShort(BAR(Sys3,0x6,0x4F4),OnPC) -- Crystal Orb buy Price
+	if count == 0 or count > 26 then
+		CMarks = 99
+	else
+		CMarks = count
+	end
 end
 
 function Warp(W,R,D,M,B,E) --Warp into the appropriate World, Room, Door, Map, Btl, Evt
@@ -254,8 +264,14 @@ end
 function GoA()
 --Garden of Assemblage Rearrangement
 if Place == 0x1A04 then
-	--Open Promise Charm Path
-	if ReadByte(Save+0x36B2) > 0 and ReadByte(Save+0x36B3) > 0 and ReadByte(Save+0x36B4) > 0 and ReadByte(Save+0x3694) > 0 then --All Proofs & Promise Charm
+	--check objectives
+	CheckObjectiveCount()
+	if CMarks == 99 and ReadByte(Save+0x3694) > 0 then
+		--Open Promise Charm Path (Original)
+		if ReadByte(Save+0x36B2) > 0 and ReadByte(Save+0x36B3) > 0 and ReadByte(Save+0x36B4) > 0 then --All Proofs & Promise Charm
+			WriteShort(BAR(ARD,0x06,0x05C),0x77A,OnPC) --Text
+		end
+	elseif ReadByte(Save+0x363D) >= CMarks and ReadByte(Save+0x3694) > 0 then
 		WriteShort(BAR(ARD,0x06,0x05C),0x77A,OnPC) --Text
 	end
 	--Demyx's Portal Text
