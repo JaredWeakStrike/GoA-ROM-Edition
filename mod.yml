@@ -1,5 +1,5 @@
-title: GoA ROM Edition v1.53.5
-description: GoA, but with a lot of stuff done through ROM editing to reduce workload on Lua.
+title: GoA ROM Edition v1.53.5 (1Hr Challenge Edits)
+description: GoA ROM, butt with edits to better fit 1Hr challenge and objective testing
 assets:
 #Lua Script
 - name: scripts/F266B00B GoA ROM.lua
