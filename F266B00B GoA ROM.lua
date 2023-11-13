@@ -294,12 +294,14 @@ function GoA()
 if Place == 0x1A04 then
 	--check objectives
 	CheckObjectiveCount()
+	CMarks=0
 	if CMarks == 99 and ReadByte(Save+0x3694) > 0 then
 		--Open Promise Charm Path (Original)
 		if ReadByte(Save+0x36B2) > 0 and ReadByte(Save+0x36B3) > 0 and ReadByte(Save+0x36B4) > 0 then --All Proofs & Promise Charm
 			WriteShort(BAR(ARD,0x06,0x05C),0x77A,OnPC) --Text
 		end
-	elseif ReadByte(Save+0x363D) >= CMarks and ReadByte(Save+0x3694) > 0 then
+	elseif ReadByte(Save+0x363D) >= CMarks and ReadByte(Save+0x3694) > 0 and ReadByte(Save+0x1ED2)~=255 then
+		-- if completeion marks >=4 and promise charm and luxord not done
 		WriteShort(BAR(ARD,0x06,0x05C),0x77A,OnPC) --Text
 	end
 	--Demyx's Portal Text
