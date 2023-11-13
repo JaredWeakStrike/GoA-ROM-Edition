@@ -887,6 +887,10 @@ if Place == 0x1212 then
 		WriteShort(BAR(ARD,0x05,0x060),0x000,OnPC) --Despawn Door RC
 	end
 end
+if World==18 and Room==27 and Place==6930 then
+	--Warp into the appropriate World, Room, Door, Map, Btl, Evt
+	Warp(18,25,0,70,70,70)
+end
 end
 
 function LoD()
