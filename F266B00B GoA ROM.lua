@@ -85,6 +85,8 @@ elseif GAME_ID == 0x431219CC and ENGINE_TYPE == 'BACKEND' then --PC
 	NxtGauge = 0x48
 	Menu1    = 0x2A0E7D0 - 0x56450E
 	NextMenu = 0x8
+
+	XemnasHP = 0x2A207A8 - 0x56454E
 end
 --[[Slot2  = Slot1 - NextSlot
 Slot3  = Slot2 - NextSlot
@@ -894,6 +896,12 @@ if World==18 and Room==27 and Place==6930 then
 	--Warp into the appropriate World, Room, Door, Map, Btl, Evt
 	Warp(18,25,0,70,70,70)
 end
+if Place == 0x1412 then  
+	WriteInt(Slot2,20000)
+	if ReadInt(XemnasHP) == 1 then
+		WriteInt(XemnasHP,0)
+		end
+	end
 end
 
 function LoD()
@@ -961,6 +969,7 @@ if ReadByte(Save+0x1D9E) > 0 then
 		WriteByte(Save+0x1D9E,3)
 	end
 end
+
 end
 
 function BC()
